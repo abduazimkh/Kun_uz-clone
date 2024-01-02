@@ -2,22 +2,49 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Container from '../components/Container.astro';
+import Hero from '../components/Hero.astro';
+import Footer from "../components/Footer.astro";
 
 import { getCollection } from "astro:content";
+import Cards from '../components/Cards.astro';
 
-const blogs = await getCollection("blogs")
+const blogs = await getCollection("blog");
+const cards = await getCollection("newsletter");
 
 console.log(blogs)
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<!-- <Container>
+		<Container>
+			<Hero/>
+			<ul class="cards__menu">
+				{
+					blogs.map(blog => 
+						<Card blog={blog} />
+						)
+					}
+			</ul>
+			<br> <br> <br>	
+			<ul class="cards__menu">
+				{
+					cards.map(blog => 
+						<Cards blog={blog} />
+					)
+					}
+			</ul>	
 
-		</Container> -->
+			
+		</Container>
+		<Footer/>
 	</main>
 </Layout>
 
 <style>
-
+	.cards__menu{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 30px;
+	}
 </style>
