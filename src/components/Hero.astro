@@ -1,0 +1,37 @@
+---
+  import { getCollection } from "astro:content"
+
+  const hero = await getCollection("hero")
+
+  console.log(hero)
+
+---
+
+
+<div class="hero">
+  {
+    hero.map(hero =>
+      <div class="hero__card">
+        <img src={hero.data.image} alt="image">
+        <div>
+          <time datetime={hero.data.date}>{hero.data.date}</time>
+          <h2>{hero.data.title}</h2>  
+        </div>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .hero{
+    widows: 100%;
+    height: 500px;
+    /* background-color: red; */
+  }
+
+  .hero__card{
+    display: flex;
+    gap: 40px;
+
+  }
+</style>

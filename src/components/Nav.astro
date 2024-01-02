@@ -1,0 +1,112 @@
+---
+import Container from "./Container.astro";
+
+---
+
+<header>
+  <nav class="nav">
+    <Container>
+      <div class="nav__wrapper">
+        <img src="./logo.png" alt="">
+        <ul>
+          <li><a href="#"></a>Home</li>
+          <li><a href="#"></a>About</li>
+          <li><a href="#"></a>News</li>
+          <li><a href="#"></a>Contact</li>
+          <li><a href="#"></a>Qa</li>
+        </ul>
+
+        <form>
+          <input type="text" placeholder="Search">
+          <button type="button">Search</button>
+        </form>
+      </div>
+      <div class="bottom__nav">
+        <ul>
+          <li><a href="#">Ҳудудлар</a></li>
+          <li><a href="#">Тошкент ш.</a></li>
+          <li><a href="#">Қорақалпоғистон</a></li>
+          <li><a href="#">Андижон</a></li>
+          <li><a href="#">Фарғона</a></li>
+          <li><a href="#">Наманган</a></li>
+          <li><a href="#">Самарқанд</a></li>
+          <li><a href="#">Бухоро</a></li>
+          <li><a href="#">Хоразм</a></li>
+          <li><a href="#">Сурхондарё</a></li>
+          <li><a href="#">Қашқадарё</a></li>
+          <li><a href="#">Жиззах</a></li>
+          <li><a href="#">Сирдарё</a></li>
+          <li><a href="#">Тошкент вил.</a></li>
+        </ul>
+      </div>
+    </Container>
+  </nav>
+</header>
+
+<style>
+  nav{
+    padding: 12px 0;
+  }
+  .nav__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    list-style-type: none;
+  }
+  nav ul li a{
+    text-decoration: none;
+
+  }
+  form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+  }
+  input, button{
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 5px 10px;
+    color: #fff;
+  }
+  input{
+    border: 1px solid #333;
+    background-color: #e7e7e7;
+  }
+  button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+  }
+  .bottom__nav{
+    margin: 10px 0;
+  }
+  .bottom__nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px;
+    background-color: #c5c5c5;
+  }
+  .bottom__nav ul a{
+    font-size: 12px;
+    border-right: 1px solid #333; 
+    padding-right: 10px;
+    color: #222;
+  }
+  .bottom__nav ul li:last-child a:last-child{
+    border-right: none;
+  }
+</style>
